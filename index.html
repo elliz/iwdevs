@@ -1,0 +1,192 @@
+---
+title: IWDevs 16 - Jekyll
+layout: reveal
+---
+
+<section>
+	<h1><img src="img/jekyll-logo.png" style="border: 0; box-shadow:none ; background: none" alt="jekyll"></h1>
+	<h2>Simple Static Sites</h2>
+
+	<p><small>Talk by Sam Ellis - <a href="http://twitter.com/elliz">@elliz</a></small></p>
+	<p><small>For <a href="https://www.facebook.com/groups/iwdev/">#IW Devs 16</a> - 1 October 2013</small></p>
+</section>
+
+
+<section>
+	<h2>What is Jekyll?</h2>
+    <ul>
+	    <li class="fragment">Simple: <span class="fragment" style="text-decoration:line-through">database, comments, updates</span></li>
+        <li class="fragment">Static: <span class="fragment">markdown, textile, liquid</span></li>
+        <li class="fragment">Blog Aware: <span class="fragment">permalinks, pages, posts</span></li>
+    </ul>
+</section>
+
+<section>
+<h2>Getting Started</h2>
+<pre><code data-trim="" contenteditable="">
+~ $ gem install jekyll
+~ $ jekyll new myblog
+~ $ cd myblog
+~/myblog $ jekyll serve
+# => Now browse to http://localhost:4000
+</code></pre>
+</section>
+
+
+<section>
+	<h2>Installation<span class="fragment"> - Mac / Linux</span></h2>
+
+<pre class="fragment"><code data-trim="" contenteditable="">
+$ gem install jekyll
+</code></pre>
+</section>
+
+
+<section>
+	<h2>Installation - Windows</h2>
+
+    <p>Ruby + DK</p>
+    <p>Jekyll</p>
+    <p>RDiscount</p>
+    <p>Python - pygments</p>
+    </ul>
+
+    <p style="margin-top: 2em">More information at <a href="http://www.madhur.co.in/blog/2011/09/01/runningjekyllwindows.html">www.madhur.co.in/blog/2011/09/01/runningjekyllwindows.html</a>.</p>
+
+</section>
+
+
+<section>
+	<h2>Basic Command Line</h2>
+
+<pre class="fragment"><code data-trim="" contenteditable="">
+$ jekyll build
+$ jekyll serve
+</code></pre>
+</section>
+
+
+<section>
+	<h2>Directory Structure</h2>
+
+<pre class="fragment"><code data-trim="" contenteditable="">
+.
+├── _config.yml
+├── _drafts
+|   ├── begin-with-the-crazy-ideas.textile
+|   └── on-simplicity-in-technology.markdown
+├── _includes
+|   ├── footer.html
+|   └── header.html
+├── _layouts
+|   ├── default.html
+|   └── post.html
+├── _posts
+|   ├── 2007-10-29-why-every-programmer-should-play-nethack.textile
+|   └── 2009-04-26-barcamp-boston-4-roundup.textile
+├── _site
+└── index.html
+</code></pre>
+</section>
+
+
+
+<section>
+	<h2>Global Configuration</h2>
+    <p>in _config.yaml</p>
+<pre class="fragment"><code data-trim="" contenteditable="">
+name: "IWDevs 16 - Jekyll"
+description: "Introduction to Jekyll talk"
+baseurl: /
+pygments: false
+future: false  
+</code></pre>
+<p class="fragment">Available in-page &#123;&#123; site.VALUE &#125;&#125; </p>
+</section>
+
+<section>
+	<h2>Front-Matter</h2>
+
+    <p>Any file with front-matter will get processed by Jekyll</p>
+
+<pre class="fragment"><code data-trim="" contenteditable="">
+---
+layout: post
+title: Blogging Like a Hacker
+--- 
+</code></pre>
+</section>
+
+
+<section>
+	<h2>Posts</h2>
+
+    <p>In _posts folder</p>
+    <p>Optionally in CATEGORY/_posts folder</p>
+    <p>Format:</p>
+
+<pre class="fragment"><code data-trim="" contenteditable="">
+YYY-MM-DD-title-of-post.ext
+
+e.g.
+
+2013-10-01-hello-world.md
+</code></pre>
+</section>
+
+
+<section>
+	<h2>Viewing posts</h2>
+
+<pre class="fragment"><code data-trim="" contenteditable="">
+<ul>
+  &#123;% for post in site.posts %&#125;
+    <li>
+      <a href="{{ post.url }}">&#123;&#123; post.title &#125;&#125;</a>
+      - &#123;&#123; post.excerpt &#125;&#125;
+    </li>
+  &#123;% endfor %&#125;
+</ul>
+</code></pre>
+
+<ul class="fragment">
+  {% for post in site.posts %}
+    <li><a href=".{{ post.url }}">{{ post.title }}</a> - {{ post.excerpt }}</li>
+  {% endfor %}
+</ul>
+</section>
+
+
+<section>
+<h2>Summary</h2>
+
+    <p>Introduction</p>
+    <p>Introduction</p>
+    <p>Introduction</p>
+
+
+</section>
+
+<section>
+<h2>Credits</h2>
+<ul>
+<li>Presentation by Reveal.js</li>
+<li>Hosted on Github Pages</li>
+<li>Content from <a href="http://jekyllrb.com">jekyllrb.com</a></li>
+</ul>
+</section>
+
+
+<section>
+<h2>Links</h2>
+<ul>
+<li><a href="https://github.com/elliz/iwdevs">Source code on GitHub: github.com/elliz/iwdevs</a></li>
+<li><a href="http://twitter.com/elliz">Follow me on Twitter - @elliz</a></li>
+    <li>Available for Contract Work ;)</li>
+</ul>
+</section>
+
+<!-- Finish -->
+<section>
+<img src="img/jekyll-logo.png" style="border: 0; box-shadow:none ; background: none" alt="jekyll">
+</section>
