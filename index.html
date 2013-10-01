@@ -121,9 +121,8 @@ title: Blogging Like a Hacker
 <section>
 	<h2>Posts</h2>
 
-    <p>In _posts folder</p>
-    <p>Optionally in CATEGORY/_posts folder</p>
-    <p>Format:</p>
+    <p class="fragment">In _posts folder</p>
+    <p class="fragment">Optionally in CATEGORY/_posts folder</p>
 
 <pre class="fragment"><code data-trim="" contenteditable="">
 YYY-MM-DD-title-of-post.ext
@@ -136,6 +135,7 @@ e.g.
 
 
 <section>
+    <section>
 	<h2>Viewing posts</h2>
 
 <pre class="fragment"><code data-trim="" contenteditable="">
@@ -154,6 +154,18 @@ e.g.
     <li><a href=".{{ post.url }}">{{ post.title }}</a> - {{ post.excerpt }}</li>
   {% endfor %}
 </ul>
+        </section>
+
+  {% for post in site.posts %}
+    <section>
+    <h2>{{ post.title }}</h2>
+
+        {{ post.content }}
+
+    </section>
+  {% endfor %}
+
+
 </section>
 
 
